@@ -212,7 +212,7 @@ def do_export(self, context):
         pimg = Image.frombytes("RGBA", (W, H), array.array("B", a).tobytes())
         pimg = ImageOps.flip(pimg)
         clipboard_copy_image(pimg)
-        
+        bpy.context.scene.node_tree.nodes.remove(viewer_n)
 
 
 
